@@ -3,15 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marcos Menchada</title>
+    <title>Michael Jackson</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
     <div class="container">
-        <img src="imagen1.png" alt="Imagen1">
-        <h1>Marcos Menchaca</h1>
-        <p>Es un cantante popular de México, ha lanzado canciones como "Quién Dice" y "Viernes 13." uno de sus primeros lanzamientos fue la canción del 2016 "Cada Vez Más." Su manera de contar historias a través de sus desfachatadas letras, en combinación con melodías influenciadas por el Rap y Pop, hacen de su música una propuesta única e inigualable. </p>
-        <iframe src="https://www.youtube.com/embed/"></iframe>
+        <img src="michael.png" alt="Imagen1">
+        <h1>Michael Jackson</h1>
+        <p>Fue un cantante, compositor y bailarín estadounidense conocido como el "Rey del Pop". Revolucionó la música pop con álbumes como "Thriller" y canciones como "Billie Jean". Su estilo innovador y sus espectaculares actuaciones en el escenario lo convirtieron en una figura icónica en la cultura popular. A pesar de enfrentar controversias, su legado perdura como uno de los artistas más influyentes de todos los tiempos.</p>
+        <div id="mensaje"></div>
+        <iframe src="https://www.youtube.com/embed/" id="miIframe"></iframe>
     </div>
+
+    <script>
+// Obtener el elemento del iframe
+var iframe = document.getElementById('miIframe');
+
+// Agregar un event listener para el evento 'mouseover' en el iframe
+iframe.addEventListener('mouseover', function() {
+    // Mostrar el mensaje en el div 'mensaje'
+    document.getElementById('mensaje').innerText = '¡Falta tu video!';
+});
+
+// Agregar un event listener para el evento 'mouseout' en el iframe
+iframe.addEventListener('mouseout', function() {
+    // Limpiar el mensaje cuando el mouse sale del iframe
+    document.getElementById('mensaje').innerText = '';
+});
+    </script>
 </body>
 </html>
