@@ -11,34 +11,24 @@
         <img src="michael.png" alt="Imagen1">
         <h1>Michael Jackson</h1>
         <p>Fue un cantante, compositor y bailarín estadounidense conocido como el "Rey del Pop". Revolucionó la música pop con álbumes como "Thriller" y canciones como "Billie Jean". Su estilo innovador y sus espectaculares actuaciones en el escenario lo convirtieron en una figura icónica en la cultura popular. A pesar de enfrentar controversias, su legado perdura como uno de los artistas más influyentes de todos los tiempos.</p>
-        <div id="mensaje">¡Mensaje al pasar el mouse o tocar!</div>
+        <div id="mensaje"></div>
         <iframe src="https://www.youtube.com/embed/" id="miIframe"></iframe>
     </div>
-    
-
     <script>
-        var iframe = document.getElementById('miIframe');
-        var mensaje = document.getElementById('mensaje');
-
-        // Mostrar el mensaje al pasar el mouse sobre el iframe
-        iframe.addEventListener('mouseover', function() {
+        // Función para mostrar y ocultar el mensaje
+        function mostrarMensaje() {
+            var mensaje = document.getElementById('mensaje');
+            mensaje.innerHTML = '¡Falta tu video!';
             mensaje.style.display = 'block';
-        });
-
-        // Ocultar el mensaje al salir del iframe
-        iframe.addEventListener('mouseout', function() {
-            mensaje.style.display = 'none';
-        });
-
-        // Mostrar el mensaje al tocar en dispositivos móviles
-        iframe.addEventListener('touchstart', function() {
-            mensaje.style.display = 'block';
-        });
-
-        // Ocultar el mensaje al tocar nuevamente en dispositivos móviles
-        iframe.addEventListener('touchend', function() {
-            mensaje.style.display = 'none';
-        });
-    </script>
+        
+            setTimeout(function() {
+                mensaje.style.display = 'none';
+                setTimeout(mostrarMensaje, 2000); // Mostrar el mensaje nuevamente después de 3 segundos
+            }, 2000); // Ocultar el mensaje después de 2 segundos
+        }
+        
+        // Llamar a la función para mostrar el mensaje por primera vez
+        mostrarMensaje();
+        </script>
 </body>
 </html>
