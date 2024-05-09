@@ -43,7 +43,6 @@
 }
 
 #mensaje {
-    margin-top: 50%;
     display: none;
     position: fixed;
     top: 50%;
